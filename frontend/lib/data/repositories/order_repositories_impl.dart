@@ -1,17 +1,17 @@
-//importar student model, student_api
-import '../../domain/entities/student.dart';
-import '../datasource/student_api.dart';
+//importar order model, order_api
+import '../../domain/entities/order.dart';
+import '../datasource/order_api.dart';
 
-class StudentRepositoryImpl {
-  final StudentApi studentApi;
+class OrderRepositoryImpl {
+  final OrderApi orderApi;
 
-  StudentRepositoryImpl(this.studentApi);
+  OrderRepositoryImpl(this.orderApi);
 
-  Future<List<Student>> getStudents() async {
-    return await studentApi.fetchStudents();
+  Future<List<Order>> getOrders() async {
+    return await orderApi.fetchOrders();
   }
 
-  Future<Student> createStudent(Student student) async {
-    return await studentApi.createStudent(student);
+  Future<Order> createOrder(String cliente) async {
+    return await orderApi.createOrder(cliente);
   }
 }
